@@ -28,7 +28,13 @@ const reducer = (state = initialState, action) => {
         case "STORE_RESULTS":
             return {
                 ...state,
-                results: state.results.concat({id: new Date(), value: state.counter})
+                results: state.results.concat({ id: new Date(), value: state.counter })
+            }
+        case "DELETE_RESULTS":
+            const ola = state.results.filter(result => result.id !== action.resultElId)
+            return {
+                ...state,
+                results: ola
             }
 
         default:

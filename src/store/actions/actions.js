@@ -32,10 +32,12 @@ export const subtract = value => {
 }
 
 export const storeResult = result => {
-    return {
-        type: STORE_RESULT,
-        result,
-    }
+    setTimeout(() => {
+        return {
+            type: STORE_RESULT,
+            result,
+        }
+    }, 2000)
 }
 
 export const deleteResult = resultElId => {
